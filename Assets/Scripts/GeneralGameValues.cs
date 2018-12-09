@@ -5,6 +5,7 @@
 
     public static int CantMaxMines = 500;
     public static int CantMines = 200;
+    public static int CantMaxChip = 50;
     public static int CantChip = 10;
     public static float TimeToExploitMine = 0.7f;
 

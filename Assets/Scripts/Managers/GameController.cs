@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,8 @@ public class GameController : MonoBehaviour
     public Level currentLevel;
     public Text gameOverText;
     public Text levelText;
+
+    List<GameObject> chips;
 
     #region MonoBehaviour
 
@@ -149,9 +152,11 @@ public class GameController : MonoBehaviour
         GeneralGameValues.Playing = false;
         GeneralGameValues.Paused = false;
 
-        ChipInitilizer();
+        GenerateChips();
+        ActiveChipsPool(currentLevel.CantChipSpawn);
 
         GenerateMines();
+        ActiveMinesPool(currentLevel.CantMinesSpawn);
     }
 
     private void GameInitializer()
@@ -161,8 +166,6 @@ public class GameController : MonoBehaviour
         playerMovement.Revive();
 
         canvasManager.UpdateData();
-
-        ActiveMinesPool(currentLevel.CantMinesSpawn);
     }
     #endregion
 
@@ -189,26 +192,42 @@ public class GameController : MonoBehaviour
 
     #region Operations
 
-    private void ChipInitilizer()
+    private void GenerateChips()
+    {
+        chips = new List<GameObject>();
+
+        GameObject chipsParent = new GameObject()
+        {
+            name = "ChipsParent"
+        };
+
+        for (int i = 0; i < currentLevel.CantMaxChipSpawn; i++)
+        {
+            GameObject chipAux = Instantiate(chipPrefab, chipsParent.transform);
+            chipAux.SetActive(false);
+            chipAux.name += i;
+            chips.Add(chipAux);
+        }
+
+    }
+
+    private void ActiveChipsPool(int pCantSpawm)
     {
         Bounds rectZone = mineZone.GetComponent<MeshCollider>().bounds;
 
-        for (int i = 0; i < currentLevel.CurrentChipCant; i++)
+        for (int i = 0; i < pCantSpawm; i++)
         {
-            GameObject chipAux = Instantiate(chipPrefab);
+            chips[i].gameObject.SetActive(true);
 
-            chipAux.transform.position =
-                new Vector3(
+            chips[i].transform.position = new Vector3(
                     Random.Range(rectZone.min.x, rectZone.max.x),
-                    chipAux.transform.position.y,
+                    chips[i].transform.position.y,
                     Random.Range(rectZone.min.z, rectZone.max.z));
         }
     }
 
     private void GenerateMines()
     {
-        //Destroy(mineParent);
-
         mineParent = new GameObject()
         {
             name = "MinesParent"

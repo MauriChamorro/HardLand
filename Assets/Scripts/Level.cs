@@ -4,6 +4,7 @@
     public int MaxLevel { get; private set; }
     public int CantMaxMinesSpawn { get; private set; }
     public int CantMinesSpawn { get; private set; }
+    public int CantMaxChipSpawn { get; private set; }
     public int CantChipSpawn { get; private set; }
     public int CurrentChipCant { get; private set; }
     public int Lifes { get; private set; }
@@ -16,6 +17,7 @@
         MaxLevel = 3;
         CantMaxMinesSpawn = GeneralGameValues.CantMaxMines;
         CantMinesSpawn = GeneralGameValues.CantMines;
+        CantMaxChipSpawn = GeneralGameValues.CantMaxChip;
         CantChipSpawn = GeneralGameValues.CantChip;
         CurrentChipCant = CantChipSpawn;
         MineExplotionTime = GeneralGameValues.TimeToExploitMine;
