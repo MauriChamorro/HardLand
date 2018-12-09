@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public Text levelText;
 
     List<GameObject> chips;
+    List<GameObject> mines;
 
     #region MonoBehaviour
 
@@ -228,15 +229,12 @@ public class GameController : MonoBehaviour
 
     private void GenerateMines()
     {
+        mines = new List<GameObject>();
+
         mineParent = new GameObject()
         {
             name = "MinesParent"
         };
-
-        minePrefab.GetComponent<MeshRenderer>().enabled = System.Convert.ToBoolean(PlayerPrefs.GetInt("seeMines"));
-
-        Bounds rectZone = mineZone.GetComponent<MeshCollider>().bounds;
-
 
         for (int i = 0; i < currentLevel.CantMaxMinesSpawn; i++)
         {
@@ -245,22 +243,23 @@ public class GameController : MonoBehaviour
             mineAux.name += i;
             mineAux.GetComponent<Mine>().Initializer(this, currentLevel.MineExplotionTime);
 
-            mineAux.transform.position =
-                new Vector3(
-                    Random.Range(rectZone.min.x, rectZone.max.x),
-                    rectZone.max.y,
-                    Random.Range(rectZone.min.z, rectZone.max.z));
+            mines.Add(mineAux);
         }
     }
 
     private void ActiveMinesPool(int pCantSpawm)
     {
-        GameObject minesParent = GameObject.Find("MinesParent");
-        Mine[] mines = minesParent.GetComponentsInChildren<Mine>(true);
+        Bounds rectZone = mineZone.GetComponent<MeshCollider>().bounds;
 
         for (int i = 0; i < pCantSpawm; i++)
         {
-            mines[i].gameObject.SetActive(true);
+            mines[i].SetActive(true);
+
+            mines[i].transform.position =
+                new Vector3(
+                    Random.Range(rectZone.min.x, rectZone.max.x),
+                    rectZone.max.y,
+                    Random.Range(rectZone.min.z, rectZone.max.z));
         }
     }
 
