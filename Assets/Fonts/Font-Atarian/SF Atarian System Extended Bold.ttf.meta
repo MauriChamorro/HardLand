@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 836f5ad0ef520fa4b9d09f64affa9f59
+timeCreated: 1543235352
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SF Atarian System Extended
+  fontNames:
+  - SF Atarian System Extended
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5894e6147c3a7e142b40192135171c70, type: 3}
+  - {fileID: 12800000, guid: 4b126aa588006644db7b008f406a61cc, type: 3}
+  - {fileID: 12800000, guid: 08c6ccfea1074764589a1428b5f0b717, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

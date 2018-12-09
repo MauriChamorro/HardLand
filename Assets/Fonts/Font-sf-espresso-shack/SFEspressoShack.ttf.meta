@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 81bdef3e70a81524cb5230da56d5e035
+timeCreated: 1543238328
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SF Espresso Shack
+  fontNames:
+  - SF Espresso Shack
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2b2d9c7da89bb684aa9fad0ae102334c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
