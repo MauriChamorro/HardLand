@@ -2,6 +2,7 @@
 {
     public int NumLevel { get; private set; }
     public int MaxLevel { get; private set; }
+    public int CantMaxMinesSpawn { get; private set; }
     public int CantMinesSpawn { get; private set; }
     public int CantChipSpawn { get; private set; }
     public int CurrentChipCant { get; private set; }
@@ -13,6 +14,7 @@
     {
         NumLevel = 1;
         MaxLevel = 3;
+        CantMaxMinesSpawn = GeneralGameValues.CantMaxMines;
         CantMinesSpawn = GeneralGameValues.CantMines;
         CantChipSpawn = GeneralGameValues.CantChip;
         CurrentChipCant = CantChipSpawn;

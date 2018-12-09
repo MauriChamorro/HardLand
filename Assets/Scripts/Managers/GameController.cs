@@ -161,6 +161,8 @@ public class GameController : MonoBehaviour
         playerMovement.Revive();
 
         canvasManager.UpdateData();
+
+        ActiveMinesPool(currentLevel.CantMinesSpawn);
     }
     #endregion
 
@@ -205,18 +207,22 @@ public class GameController : MonoBehaviour
 
     private void GenerateMines()
     {
-        Destroy(mineParent);
+        //Destroy(mineParent);
 
-        mineParent = new GameObject();
+        mineParent = new GameObject()
+        {
+            name = "MinesParent"
+        };
 
         minePrefab.GetComponent<MeshRenderer>().enabled = System.Convert.ToBoolean(PlayerPrefs.GetInt("seeMines"));
 
         Bounds rectZone = mineZone.GetComponent<MeshCollider>().bounds;
 
 
-        for (int i = 0; i < currentLevel.CantMinesSpawn; i++)
+        for (int i = 0; i < currentLevel.CantMaxMinesSpawn; i++)
         {
             GameObject mineAux = Instantiate(minePrefab, mineParent.transform);
+            mineAux.SetActive(false);
             mineAux.name += i;
             mineAux.GetComponent<Mine>().Initializer(this, currentLevel.MineExplotionTime);
 
@@ -225,6 +231,17 @@ public class GameController : MonoBehaviour
                     Random.Range(rectZone.min.x, rectZone.max.x),
                     rectZone.max.y,
                     Random.Range(rectZone.min.z, rectZone.max.z));
+        }
+    }
+
+    private void ActiveMinesPool(int pCantSpawm)
+    {
+        GameObject minesParent = GameObject.Find("MinesParent");
+        Mine[] mines = minesParent.GetComponentsInChildren<Mine>(true);
+
+        for (int i = 0; i < pCantSpawm; i++)
+        {
+            mines[i].gameObject.SetActive(true);
         }
     }
 
