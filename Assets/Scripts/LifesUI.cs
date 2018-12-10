@@ -15,4 +15,9 @@ public class LifesUI : MonoBehaviour
         lifes--;
         transform.GetChild(lifes).gameObject.GetComponent<Image>().enabled = false;
     }
+
+    public void Initializer(int pLifes)
+    {
+        lifes = pLifes;
+    }
 }

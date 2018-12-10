@@ -8,6 +8,7 @@ public class CanvasManager : MonoBehaviour
     public Animator lifeAnimator;
     public Image[] lifes;
     public Text chipCount;
+    public LifesUI lifesUI;
 
     public void LoseLifes(int pActualLifes, int pCantLoseLifes)
     {
@@ -18,6 +19,14 @@ public class CanvasManager : MonoBehaviour
                 lifeAnimator.SetTrigger("LoseLife" + pActualLifes);
                 pActualLifes--;
             }
+        }
+    }
+
+    private void ActivateLifes()
+    {
+        foreach (Image life in lifes)
+        {
+            life.enabled = true;
         }
     }
 
@@ -32,13 +41,11 @@ public class CanvasManager : MonoBehaviour
         chipCount.text = currentLevel.CurrentChipCant.ToString();
     }
 
-    public void Initilizaer(Level pCurrentLevel)
+    public void Initilizer(Level pCurrentLevel)
     {
         currentLevel = pCurrentLevel;
-    }
-
-    public void UpdateData()
-    {
+        lifesUI.Initializer(currentLevel.Lifes);
         chipCount.text = currentLevel.CurrentChipCant.ToString();
+        ActivateLifes();
     }
 }

@@ -28,5 +28,10 @@ public class PlayerLevelEditor : Editor
             myTarget.GameOver(false);
         }
 
+        if (GUILayout.Button("Reiniciar Juego"))
+        {
+            myTarget.RestartGame();
+        }
+
     }
 }

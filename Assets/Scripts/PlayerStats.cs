@@ -59,7 +59,13 @@ public class PlayerStats : MonoBehaviour
     public void Initializaer(GameController pGameController)
     {
         gameController = pGameController;
-        lifes = pGameController.currentLevel.Lifes;
+        //lifes = pGameController.currentLevel.Lifes;
+        RestartStats();
+    }
+
+    public void RestartStats()
+    {
+        lifes = gameController.currentLevel.Lifes;
     }
 
     public void LoseLifes(int pCant, CanvasManager pCanvasManager)

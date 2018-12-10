@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
     {
         soundManager = SoundManager.Instance;
 
-        canvasManager.Initilizaer(currentLevel);
+        canvasManager.Initilizer(currentLevel);
 
         playerStats.Initializaer(this);
 
@@ -99,8 +99,25 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
-        mineDetector.VaciarCollisions();
-        SceneManager.LoadScene("Minefield");
+        GeneralGameValues.Playing = false;
+        GeneralGameValues.Paused = false;
+
+        GameInitializer();
+
+        currentLevel = new Level();
+
+        ActiveChipsPool(currentLevel.CantChipSpawn);
+
+        ActiveMinesPool(currentLevel.CantMinesSpawn);
+
+        canvasManager.Initilizer(currentLevel);
+
+        StartGame();
+
+        GeneralGameValues.Paused = GeneralGameValues.Paused ? false : true;
+        PauseGame();
+
+        playerStats.RestartStats();
     }
 
     public void LevelUp()
@@ -166,7 +183,10 @@ public class GameController : MonoBehaviour
 
         playerMovement.Revive();
 
-        canvasManager.UpdateData();
+        Color outColor;
+        ColorUtility.TryParseHtmlString("#38302D8F", out outColor);
+        levelText.GetComponentInParent<Image>().color = outColor;
+
     }
     #endregion
 
@@ -273,9 +293,7 @@ public class GameController : MonoBehaviour
     public void MineExploision(GameObject pMine, float pParticlesTime)
     {
         soundManager.PlaySFXClipName("mine-explotion");
-        //Destroy(pMine.gameObject, 0.2f);
         StartCoroutine(DesactiveMine(pMine, pParticlesTime));
-        //pMine.SetActive(false);
     }
 
     IEnumerator DesactiveMine(GameObject pMine, float pWaitTime)
@@ -306,7 +324,7 @@ public class GameController : MonoBehaviour
     {
         soundManager.PlaySFXClipName("chip-pickedup");
         canvasManager.ChipPickedUp();
-        Destroy(pChip);
+        pChip.SetActive(false);
     }
 
     #endregion
