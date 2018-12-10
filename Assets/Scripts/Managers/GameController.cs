@@ -343,8 +343,7 @@ public class GameController : MonoBehaviour
         Color colorOut = Color.white;
         if (pWon)
         {
-            soundManager.PlaySFXClipName("win");
-
+            soundManager.PlaySFXClipName("win-sound");
 
             ColorUtility.TryParseHtmlString("#37FF118F", out colorOut);
 
