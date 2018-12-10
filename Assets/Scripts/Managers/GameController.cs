@@ -354,7 +354,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            soundManager.PlaySFXClipName("lose");
+            soundManager.PlaySFXClipName("lose-sound");
             levelText.text = "Atrapado";
 
             ColorUtility.TryParseHtmlString("#FF3D118F", out colorOut);
