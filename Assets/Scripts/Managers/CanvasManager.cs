@@ -45,7 +45,13 @@ public class CanvasManager : MonoBehaviour
     {
         currentLevel = pCurrentLevel;
         lifesUI.Initializer(currentLevel.Lifes);
-        chipCount.text = currentLevel.CurrentChipCant.ToString();
         ActivateLifes();
+
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        chipCount.text = currentLevel.CurrentChipCant.ToString();
     }
 }

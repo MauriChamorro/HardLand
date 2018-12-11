@@ -132,11 +132,12 @@ public class GameController : MonoBehaviour
 
         CheckLevelState();
 
-        GamePreInitializer();
+        ActiveChipsPool(currentLevel.CantChipSpawn);
+
+        ActiveMinesPool(currentLevel.CantMinesSpawn);
+        canvasManager.UpdateUI();
 
         GameInitializer();
-
-        StartGame();
     }
 
     private void CheckLevelState()
