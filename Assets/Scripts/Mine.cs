@@ -40,6 +40,12 @@ public class Mine : MonoBehaviour
         timeToExploit = MineExploitTime;
     }
 
+    public void RestartMine(float pMineExploitTime)
+    {
+        statesMine = MineStates.Reposo;
+        timeToExploit = pMineExploitTime;
+    }
+
     private void DoActionState()
     {
         switch (statesMine)

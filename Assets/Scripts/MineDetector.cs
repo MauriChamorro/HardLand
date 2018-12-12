@@ -25,7 +25,6 @@ public class MineDetector : MonoBehaviour
     void Update()
     {
         transform.position = pj.transform.position;
-        print(collisions.Count);
         colorLerper.UpdateLerp(GOMenorDistancia());
     }
 
@@ -70,7 +69,7 @@ public class MineDetector : MonoBehaviour
         }
     }
 
-    public void VaciarCollisions()
+    public void EmptyCollisions()
     {
         collisions.Clear();
     }

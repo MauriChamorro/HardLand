@@ -119,7 +119,7 @@ public class GameController : MonoBehaviour
 
         playerStats.RestartStats();
 
-        mineDetector.VaciarCollisions();
+        mineDetector.EmptyCollisions();
     }
 
     public void LevelUp()
@@ -141,7 +141,7 @@ public class GameController : MonoBehaviour
 
         GameInitializer();
 
-        mineDetector.VaciarCollisions();
+        mineDetector.EmptyCollisions();
     }
 
     private void CheckLevelState()
@@ -278,6 +278,8 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < pCantSpawm; i++)
         {
+            mines[i].GetComponent<Mine>().RestartMine(currentLevel.MineExplotionTime);
+
             mines[i].SetActive(true);
 
             mines[i].transform.position =
