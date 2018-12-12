@@ -118,6 +118,8 @@ public class GameController : MonoBehaviour
         PauseGame();
 
         playerStats.RestartStats();
+
+        mineDetector.VaciarCollisions();
     }
 
     public void LevelUp()
@@ -138,6 +140,8 @@ public class GameController : MonoBehaviour
         canvasManager.UpdateUI();
 
         GameInitializer();
+
+        mineDetector.VaciarCollisions();
     }
 
     private void CheckLevelState()

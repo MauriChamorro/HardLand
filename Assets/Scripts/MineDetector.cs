@@ -13,7 +13,6 @@ public class MineDetector : MonoBehaviour
 
     private void Awake()
     {
-        //collisions.Clear();
         sCollider = GetComponent<SphereCollider>();
         colorLerper = GetComponent<ColorLerper>();
     }
