@@ -45,5 +45,5 @@ Debido a esto, se está a disposición de aceptar trabajo artístico de forma li
 
 El juego no tiene fines comerciales, sino aplicar prácticas en el mundo de vodeojuegos, compartir conocimientos y experiencias.
 
->Contacto
+##Contáctame
 Puedes enviarme mensajes de correo electrónico a __mmchamoo@gmail.com__ o agregarme a [LinkedIn](https://www.linkedin.com/in/mauricio-manuel-chamorro).
