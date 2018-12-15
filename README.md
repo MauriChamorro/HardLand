@@ -16,7 +16,7 @@ Juego SinglePlayer, en primera persona con aspecto de plataformas 3D.
 El juego fue pensado para plataformas de escritorio desde su inicio.
 
 ### Características Especiales
-- Detector de minas: __Lerp__ entre rojo y verde de la distancia entre la Mina más cerca al jugador.
+- Detector de minas: Se dispondra de una barra de color entre rojo y verde que determina la distancia a la Mina más cerca dentro de un radio.
 
 ## Game Development
 
@@ -26,6 +26,7 @@ El juego fue pensado para plataformas de escritorio desde su inicio.
 - Partículas: exploción de Minas
 - Pooling de Minas y Chips
 - No se utilizó Fisicas para movimientos de cualquier objeto
+- Detector de Minas: __Lerp__ entre dos colores según la Mina más cercana. Se genera una colección de Minas a medida que éstas interctúan con un Collider de radio X.
 
 ### Software
 - Patrones: 
