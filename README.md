@@ -1,4 +1,4 @@
-# HardLand :small_blue_diamond:
+# HardLand :pushpin:
 
 ## Introducción
 Este juego fue realizado como **Proyecto** 3D de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
@@ -14,7 +14,7 @@ Cada en cada nivel aumenta la cantidad de Chips a juntar y la cantidad de Minas,
 El juego fue pensado para plataformas de escritorio desde su inicio.
 
 ### Características Especiales
-:small_blue_diamond: Detector de minas: Se dispondrá de una barra de color entre rojo y verde que determina la distancia a la Mina más cerca dentro de un radio.
+**Detector de minas:** Se dispondrá de una barra de color entre rojo y verde que determina la distancia a la Mina más cerca dentro de un radio.
 
 ## Game Development
 
