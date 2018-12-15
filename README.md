@@ -4,6 +4,8 @@
 Este juego fue realizado como **Proyecto** 3D de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
 
 ## Game Design
+
+### Concepto general
 Es una juego SinglePlayer, primera persona en el que debes juntar Chips dispersos por toda una __zona_ de trampas y obstáculos. Cuentas con tres vidas para superar tres niveles de juego.
 
 Existen trampas tales como Minas, que al pasar por encima de ellas explotan en menos de un segundo. Otros Obstáculos como paredes y esferas que se mueven.
