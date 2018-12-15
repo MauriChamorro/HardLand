@@ -1,4 +1,4 @@
-# HardLand
+# HardLand :small_blue_diamond:
 
 ## Introducción
 Este juego fue realizado como **Proyecto** 3D de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
