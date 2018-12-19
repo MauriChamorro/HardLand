@@ -1,4 +1,4 @@
-# HardLand :pushpin:
+# HardLand ![ScreenShot](https://github.com/MauriChamorro/HardLand/blob/master/Assets/Sprites/image_icon_hardland_Uus_1.ico)
 
 ## Introducción
 Este juego fue realizado como **Proyecto** 3D de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
