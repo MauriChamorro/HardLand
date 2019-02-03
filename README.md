@@ -1,7 +1,7 @@
 # HardLand ![ScreenShot](https://github.com/MauriChamorro/HardLand/blob/master/Assets/Sprites/image_icon_hardland_Uus_1.ico)
 
 ## Introducción
-Este juego fue realizado como **Proyecto** 3D de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
+Este juego fue realizado como **Proyecto 3D** de entrega del trayecto profesional Desarrollo de Videojuegos con Unity del instituto [Image Campus](https://www.imagecampus.edu.ar).
 
 ## Game Design
 
@@ -15,9 +15,6 @@ Cada en cada nivel aumenta la cantidad de Chips a juntar y la cantidad de Minas,
 ### Plataforma target
 El juego fue pensado para plataformas de escritorio desde su inicio.
 
-### Características Especiales
-**Detector de minas:** Se dispondrá de una barra de color entre rojo y verde que determina la distancia a la Mina más cerca dentro de un radio.
-
 ## Game Development
 
 ### Características de Motor
@@ -25,6 +22,9 @@ El juego fue pensado para plataformas de escritorio desde su inicio.
 - Animaciones de UI.
 - Partículas: explosión de Minas.
 - No se utilizó Físicas para movimientos de cualquier objeto.
+
+### Características Especiales
+**Detector de minas:** Se disopone de una barra de color entre rojo y verde que determina la distancia a la Mina más cerca dentro de un radio.
 
 ### Software
 - Patrones: 
@@ -36,9 +36,7 @@ El juego fue pensado para plataformas de escritorio desde su inicio.
 - Cada vez que se instancia un nivel, los Chips y Minas se ubican aleatoriamente dentro de los límites de la zona de trampas y objetos.
 
 ## Prueba el juego y envía feedback
-El juego está compilado para plataforma __Windows__.
-
-Para probarlo, debes descargar el repositorio como Zip, descomprimirlo y ejecutar __Build/HardLand.exe__.
+El juego está compilado WebGL: https://maurichamorro.github.io/HardLand/index
 
 ## Expectativas
 El juego cuenta con poco arte 3D como texturas y objetos. También los Sprites de UI son básicos a modo de prototipo.
