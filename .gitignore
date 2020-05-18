@@ -8,6 +8,8 @@
 
 # JetBrains
 .idea/
+/.idea
+
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
 
