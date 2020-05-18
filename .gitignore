@@ -5,6 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Pp]lugins/
+[Pp]lugins/*.meta
 
 # JetBrains
 .idea/
