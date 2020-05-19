@@ -6,6 +6,7 @@
 [Ll]ogs/
 [Pp]lugins/
 [Pp]lugins/*.meta
+[Pp]lugins/**/*.meta
 
 # JetBrains
 .idea/
