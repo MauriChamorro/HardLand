@@ -6,14 +6,15 @@ public class MineDetector : MonoBehaviour
     public GameObject pj;
     public Color colorTarget1;
     public Color colorTarget2;
-    public SphereCollider sCollider;
+    public SphereCollider colliderDetector;
     public ColorLerper colorLerper;
 
     public List<GameObject> collisions;
+    public float maxDistanceToDetectMines = 1000000f;
 
     private void Awake()
     {
-        sCollider = GetComponent<SphereCollider>();
+        colliderDetector = GetComponent<SphereCollider>();
         colorLerper = GetComponent<ColorLerper>();
     }
 
@@ -25,30 +26,31 @@ public class MineDetector : MonoBehaviour
     void Update()
     {
         transform.position = pj.transform.position;
-        colorLerper.UpdateLerp(GOMenorDistancia());
+
+        //alterna entre los dos colores en cada update segun la distancia a las minas cercanas
+        colorLerper.UpdateLerp(DistanceToNearestMine());
     }
 
-    public float GOMenorDistancia()
+    public float DistanceToNearestMine()
     {
-        float min = 1000000f;
+        var shortestDistance = maxDistanceToDetectMines;
         foreach (GameObject mine in collisions)
         {
+            var distance = Vector3.Distance(transform.position, mine.transform.position);
             if (mine)
             {
-                float auxMin = Vector3.Distance(transform.position, mine.transform.position);
-
-                if (auxMin < min)
-                    min = auxMin;
+                if (distance < shortestDistance)
+                    shortestDistance = distance;
             }
         }
 
-        return min;
+        return shortestDistance;
     }
 
     public void Initializer(float pRadius, Color pColoDetector)
     {
-        sCollider = GetComponent<SphereCollider>();
-        sCollider.radius = pRadius;
+        colliderDetector = GetComponent<SphereCollider>();
+        colliderDetector.radius = pRadius;
     }
 
     private void OnTriggerEnter(Collider other)

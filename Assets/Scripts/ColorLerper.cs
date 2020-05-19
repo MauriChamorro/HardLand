@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class ColorLerper : MonoBehaviour
 {
     //public GameObject mineDetectorViewer;
@@ -16,21 +17,6 @@ public class ColorLerper : MonoBehaviour
         lerpingTime = 5;
     }
 
-    void Update()
-    {
-        //currentTime += Time.deltaTime;
-        //currentTime = 1;
-        
-        //if (currentTime > lerpingTime)
-        //{
-        //    currentTime = lerpingTime;
-        //}
-
-        float perc = currentTime / lerpingTime;
-
-        imageMineDetector.color = Color.Lerp(colorA, colorB, perc);
-    }
-
     public void Initializer(Color pColor1, Color pColor2)
     {
         colorA = pColor1;
@@ -40,5 +26,8 @@ public class ColorLerper : MonoBehaviour
     public void UpdateLerp(float pCurrentTime)
     {
         currentTime = pCurrentTime;
+        float perc = currentTime / lerpingTime;
+
+        imageMineDetector.color = Color.Lerp(colorA, colorB, perc);
     }
 }
