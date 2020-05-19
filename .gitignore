@@ -7,6 +7,7 @@
 [Pp]lugins/
 [Pp]lugins/*.meta
 [Pp]lugins/**/*.meta
+[Pp]ackages/
 
 # JetBrains
 .idea/
